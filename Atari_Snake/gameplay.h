@@ -1,6 +1,7 @@
 #ifndef GAMEPLAY_H
 #define GAMEPLAY_H
 
+#include "fruit.h"
 #include "snake.h"
 #include <QGraphicsScene>
 
@@ -9,9 +10,8 @@ class GamePlay
 public:
     GamePlay(QGraphicsScene *scene);
 
-    void renderGame();
-    void renderBorder();
     void renderSnake();
+    void renderFruit();
 
     void proposeDir(Direction dir);
     void logic();
@@ -20,7 +20,7 @@ public:
 private:
     QGraphicsScene *scene;
     Snake *snake;
-    QTimer *timer;
+    fruit *Fruit;
     void DoCollision();
 };
 

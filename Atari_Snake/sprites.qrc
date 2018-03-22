@@ -4,5 +4,6 @@
         <file>snake_head_left.png</file>
         <file>snake_head_right.png</file>
         <file>snake_head_up.png</file>
+        <file>fruit.png</file>
     </qresource>
 </RCC>
