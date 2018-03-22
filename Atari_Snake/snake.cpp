@@ -29,7 +29,6 @@ void Snake::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWi
 }
 
 void Snake::advance(int phase){
-    qDebug() << "advance!";
     if(!phase) return;
 
     if(dir == Up){

@@ -9,6 +9,8 @@ class GamePlay
 public:
     GamePlay(QGraphicsScene *scene);
 
+    void renderGame();
+    void renderBorder();
     void renderSnake();
 
     void proposeDir(Direction dir);
@@ -18,6 +20,7 @@ public:
 private:
     QGraphicsScene *scene;
     Snake *snake;
+    QTimer *timer;
     void DoCollision();
 };
 
