@@ -26,10 +26,10 @@ public:
 
 private slots:
     void on_button_slug_clicked();
-
     void on_button_worm_clicked();
-
     void on_button_python_clicked();
+    void step();
+    void endGame();
 
 private:
     Ui::Dialog *ui;

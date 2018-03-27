@@ -21,6 +21,8 @@ public:
 
     void setDir(Direction dir);
 
+    void movement();
+
 protected:
     void advance(int phase);
 

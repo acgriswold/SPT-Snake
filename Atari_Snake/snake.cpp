@@ -30,7 +30,9 @@ void Snake::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWi
 
 void Snake::advance(int phase){
     if(!phase) return;
+}
 
+void Snake::movement(){
     if(dir == Up){
         brush.setTexture(QPixmap(":/snake_head_up.png").scaledToWidth(40, Qt::SmoothTransformation));
         setPos(mapToParent(0,-speed));
@@ -47,7 +49,6 @@ void Snake::advance(int phase){
         brush.setTexture(QPixmap(":/snake_head_left.png").scaledToWidth(40, Qt::SmoothTransformation));
         setPos(mapToParent(-speed, 0));
     }
-
 }
 
 void Snake::setDir(Direction dir){
