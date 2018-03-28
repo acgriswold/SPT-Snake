@@ -32,13 +32,16 @@ void GamePlay::renderBorder(){
     scene->addLine(RightLine,mypen);
     scene->addLine(BottomLine,mypen);
 
-    scene->addEllipse(100, 200, 20, 20, mypen);
+    /*QBrush mybrush;
+    mypen = QPen(Qt::transparent);
+    mybrush.setTexture(QPixmap(":/_up.png").scaledToWidth(20, Qt::SmoothTransformation));
+    scene->addEllipse(120, 220, 20, 20, mypen, mybrush);*/
 }
 
 void GamePlay::renderSnake(){
     int ItemCount = 1;
     for(int i = 0; i< ItemCount; i++){
-        Snake *item = new Snake();
+        Snake *item = new Snake(scene);
         snake = item;
         scene->addItem(snake);
     }
@@ -58,15 +61,14 @@ void GamePlay::DoCollision(){
     else{
         qDebug() << "collision!!" << scene->collidingItems(snake)[0]->type();
 
-        //colliding self
-        if(scene->collidingItems(snake)[0]->type() == 65536){qDebug() << "_self!";}
         //collding border
-        else if(scene->collidingItems(snake)[0]->type() == 6){
+        if(scene->collidingItems(snake)[0]->type() == 6){
             qDebug() << "_wall!";
             emit collision();
         }
+        //colliding self
+        else if(scene->collidingItems(snake)[0]->type() == 65536){qDebug() << "_self!";}
         //colliding fruit
         else if(scene->collidingItems(snake)[0]->type() == 4){qDebug() << "fruit!";}
     }
-
 }
