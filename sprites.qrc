@@ -1,0 +1,16 @@
+<RCC>
+    <qresource prefix="/">
+        <file>head_up.png</file>
+        <file>head_down.png</file>
+        <file>head_left.png</file>
+        <file>head_right.png</file>
+        <file>body_down.png</file>
+        <file>body_right.png</file>
+        <file>body_up.png</file>
+        <file>body_left.png</file>
+        <file>piviot_down_left.png</file>
+        <file>piviot_down_right.png</file>
+        <file>piviot_up_left.png</file>
+        <file>piviot_up_right.png</file>
+    </qresource>
+</RCC>
