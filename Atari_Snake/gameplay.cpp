@@ -17,6 +17,7 @@ void GamePlay::logic(){
 void GamePlay::renderGame(){
     this->renderSnake();
     this->renderBorder();
+    this->renderFruit();
 }
 
 void GamePlay::renderBorder(){
@@ -32,16 +33,31 @@ void GamePlay::renderBorder(){
     scene->addLine(RightLine,mypen);
     scene->addLine(BottomLine,mypen);
 
-    scene->addEllipse(100, 200, 20, 20, mypen);
+    /*QBrush mybrush;
+    mypen = QPen(Qt::transparent);
+    mybrush.setTexture(QPixmap(":/_up.png").scaledToWidth(20, Qt::SmoothTransformation));
+    scene->addEllipse(120, 220, 20, 20, mypen, mybrush);*/
 }
 
 void GamePlay::renderSnake(){
     int ItemCount = 1;
     for(int i = 0; i< ItemCount; i++){
-        Snake *item = new Snake();
+        Snake *item = new Snake(scene);
         snake = item;
         scene->addItem(snake);
     }
+}
+
+void GamePlay::renderFruit(){
+    QBrush fruitbrush;
+    fruitbrush.setTexture(QPixmap(":/fruit.png").scaledToWidth(10, Qt::SmoothTransformation));
+    QGraphicsEllipseItem *apple=new QGraphicsEllipseItem(
+    QRect(qrand()%((640+1)+650)-650,qrand()%((300+1)+290)-290,10,10));
+    apple->setPen(QPen(Qt::transparent));
+    apple->setBrush(fruitbrush);
+    _fruit = apple;
+    scene->addItem(apple);
+
 }
 
 void GamePlay::proposeDir(Direction dir){
@@ -58,15 +74,22 @@ void GamePlay::DoCollision(){
     else{
         qDebug() << "collision!!" << scene->collidingItems(snake)[0]->type();
 
-        //colliding self
-        if(scene->collidingItems(snake)[0]->type() == 65536){qDebug() << "_self!";}
         //collding border
-        else if(scene->collidingItems(snake)[0]->type() == 6){
+        if(scene->collidingItems(snake)[0]->type() == 6){
             qDebug() << "_wall!";
             emit collision();
         }
+        //colliding self
+        else if(scene->collidingItems(snake)[0]->type() == 65536){
+            qDebug() << "_self!";
+            emit collision();
+        }
         //colliding fruit
-        else if(scene->collidingItems(snake)[0]->type() == 4){qDebug() << "fruit!";}
+        else if(scene->collidingItems(snake)[0]->type() == 4){
+            qDebug() << "fruit!";
+            scene->removeItem(_fruit);
+            renderFruit();
+            snake->add_body(1,scene);
+        }
     }
-
 }

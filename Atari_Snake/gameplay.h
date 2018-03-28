@@ -16,6 +16,7 @@ public:
     void renderGame();
     void renderBorder();
     void renderSnake();
+     void renderFruit();
 
     void proposeDir(Direction dir);
     void logic();
@@ -27,6 +28,7 @@ private:
     QGraphicsScene *scene;
     Snake *snake;
     void DoCollision();
+    QGraphicsEllipseItem *_fruit;
 };
 
 #endif // GAMEPLAY_H
