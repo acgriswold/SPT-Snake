@@ -6,7 +6,7 @@
 class Snake : public QGraphicsItem
 {
 public:
-    Snake(QGraphicsScene *scene);
+    Snake(QGraphicsScene *scene, int plyr);
     QRectF boundingRect() const;
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
 
@@ -23,6 +23,13 @@ private:
     Direction dir;
     Direction prevdir;
     QBrush brush;
+    int player;
+
+    QString head_up;
+    QString head_right;
+    QString head_down;
+    QString head_left;
+
 
     SnakeBody *(body[1950]);
     int body_parts;

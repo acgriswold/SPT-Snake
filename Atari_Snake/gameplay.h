@@ -1,25 +1,27 @@
 #ifndef GAMEPLAY_H
 #define GAMEPLAY_H
 
-
 #include "snake.h"
 #include <QGraphicsScene>
 #include <QObject>
+
+enum Mode{Single, Multi};
 
 class GamePlay : public QObject
 {
     Q_OBJECT
 public:
-    GamePlay(QGraphicsScene *scene);
+    GamePlay(QGraphicsScene *scene, Mode md);
     ~GamePlay();
 
     void renderGame();
     void renderBorder();
-    void renderSnake();
-     void renderFruit();
+    void renderSnake(int ItemCount);
+    void renderFruit();
 
-    void proposeDir(Direction dir);
+    void proposeDir(Direction dir, int plyr);
     void logic();
+    void add_part();
 
 signals:
     void collision();
@@ -27,8 +29,11 @@ signals:
 private:
     QGraphicsScene *scene;
     Snake *snake;
+    Snake *snake_p2;
+    QGraphicsEllipseItem *fruit;
     void DoCollision();
-    QGraphicsEllipseItem *_fruit;
+    Mode mode;
+
 };
 
 #endif // GAMEPLAY_H

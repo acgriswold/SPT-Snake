@@ -1,17 +1,29 @@
 <RCC>
     <qresource prefix="/">
-        <file>head_up.png</file>
-        <file>head_down.png</file>
-        <file>head_left.png</file>
-        <file>head_right.png</file>
-        <file>body_down.png</file>
-        <file>body_right.png</file>
-        <file>body_up.png</file>
-        <file>body_left.png</file>
-        <file>piviot_down_left.png</file>
-        <file>piviot_down_right.png</file>
-        <file>piviot_up_left.png</file>
-        <file>piviot_up_right.png</file>
         <file>fruit.png</file>
+        <file>head_down_p2.png</file>
+        <file>head_left_p2.png</file>
+        <file>head_right_p2.png</file>
+        <file>head_up_p2.png</file>
+        <file>head_down_p1.png</file>
+        <file>head_left_p1.png</file>
+        <file>head_right_p1.png</file>
+        <file>head_up_p1.png</file>
+        <file>body_down_p1.png</file>
+        <file>body_down_p2.png</file>
+        <file>body_left_p1.png</file>
+        <file>body_left_p2.png</file>
+        <file>body_right_p1.png</file>
+        <file>body_right_p2.png</file>
+        <file>body_up_p1.png</file>
+        <file>body_up_p2.png</file>
+        <file>pivot_down_left_p1.png</file>
+        <file>pivot_down_left_p2.png</file>
+        <file>pivot_down_right_p1.png</file>
+        <file>pivot_down_right_p2.png</file>
+        <file>pivot_up_left_p1.png</file>
+        <file>pivot_up_left_p2.png</file>
+        <file>pivot_up_right_p1.png</file>
+        <file>pivot_up_right_p2.png</file>
     </qresource>
 </RCC>
