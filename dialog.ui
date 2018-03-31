@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1514</width>
+    <height>777</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background: black; color: #5fd25d;
+font: 22pt &quot;MS Serif&quot;;</string>
+  </property>
+  <widget class="QStackedWidget" name="stackedWidget">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1521</width>
+     <height>781</height>
+    </rect>
+   </property>
+   <widget class="QWidget" name="splash_screen">
+    <widget class="QLabel" name="label">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>120</y>
+       <width>1511</width>
+       <height>161</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background: none; font: 40pt &quot;MS Serif&quot;;</string>
+     </property>
+     <property name="text">
+      <string>Snake</string>
+     </property>
+     <property name="scaledContents">
+      <bool>false</bool>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="button_worm">
+     <property name="geometry">
+      <rect>
+       <x>700</x>
+       <y>500</y>
+       <width>111</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background: none; border: 1px solid #5fd25d;</string>
+     </property>
+     <property name="text">
+      <string>worm</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="button_python">
+     <property name="geometry">
+      <rect>
+       <x>960</x>
+       <y>440</y>
+       <width>111</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background: none; border: 1px solid #5fd25d;</string>
+     </property>
+     <property name="text">
+      <string>python</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="button_slug">
+     <property name="geometry">
+      <rect>
+       <x>430</x>
+       <y>440</y>
+       <width>111</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background: none; border: 1px solid #5fd25d;</string>
+     </property>
+     <property name="text">
+      <string>slug</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="check_multiplayer">
+     <property name="geometry">
+      <rect>
+       <x>670</x>
+       <y>640</y>
+       <width>181</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="text">
+      <string>Multiplayer?</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="gameplay">
+    <widget class="QGraphicsView" name="graphicsView">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>1491</width>
+       <height>751</height>
+      </rect>
+     </property>
+     <property name="sizeAdjustPolicy">
+      <enum>QAbstractScrollArea::AdjustToContents</enum>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>
