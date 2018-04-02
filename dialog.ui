@@ -21,9 +21,9 @@ font: 22pt &quot;MS Serif&quot;;</string>
    <property name="geometry">
     <rect>
      <x>0</x>
-     <y>0</y>
+     <y>-30</y>
      <width>1521</width>
-     <height>781</height>
+     <height>821</height>
     </rect>
    </property>
    <widget class="QWidget" name="splash_screen">
@@ -102,7 +102,7 @@ font: 22pt &quot;MS Serif&quot;;</string>
       <rect>
        <x>670</x>
        <y>640</y>
-       <width>181</width>
+       <width>191</width>
        <height>31</height>
       </rect>
      </property>
@@ -111,6 +111,22 @@ font: 22pt &quot;MS Serif&quot;;</string>
      </property>
      <property name="text">
       <string>Multiplayer?</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="button_slug_2">
+     <property name="geometry">
+      <rect>
+       <x>90</x>
+       <y>630</y>
+       <width>131</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background: none; border: 1px solid #5fd25d;</string>
+     </property>
+     <property name="text">
+      <string>Controls</string>
      </property>
     </widget>
    </widget>
@@ -131,10 +147,10 @@ font: 22pt &quot;MS Serif&quot;;</string>
     <widget class="QLabel" name="score_label">
      <property name="geometry">
       <rect>
-       <x>1390</x>
-       <y>30</y>
-       <width>111</width>
-       <height>31</height>
+       <x>1380</x>
+       <y>40</y>
+       <width>121</width>
+       <height>51</height>
       </rect>
      </property>
      <property name="font">
@@ -150,7 +166,7 @@ font: 22pt &quot;MS Serif&quot;;</string>
       <string notr="true">background: transparent;</string>
      </property>
      <property name="text">
-      <string>SCORE</string>
+      <string> Player 1</string>
      </property>
      <property name="textFormat">
       <enum>Qt::AutoText</enum>
@@ -163,13 +179,110 @@ font: 22pt &quot;MS Serif&quot;;</string>
      <property name="geometry">
       <rect>
        <x>1300</x>
-       <y>60</y>
+       <y>90</y>
        <width>171</width>
        <height>81</height>
       </rect>
      </property>
      <property name="styleSheet">
       <string notr="true">background: transparent;</string>
+     </property>
+    </widget>
+    <widget class="QLCDNumber" name="Score_board_p2">
+     <property name="geometry">
+      <rect>
+       <x>-80</x>
+       <y>80</y>
+       <width>171</width>
+       <height>81</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background: transparent;
+color: red;</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="score_label_2">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>40</y>
+       <width>121</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>MS Serif</family>
+       <pointsize>22</pointsize>
+       <weight>50</weight>
+       <italic>false</italic>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background: transparent;
+color: red;</string>
+     </property>
+     <property name="text">
+      <string> Player 2</string>
+     </property>
+     <property name="textFormat">
+      <enum>Qt::PlainText</enum>
+     </property>
+     <property name="scaledContents">
+      <bool>false</bool>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="controls">
+    <widget class="QLabel" name="label_2">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>30</y>
+       <width>1511</width>
+       <height>781</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Player One:
+
+Up: W
+Down: S
+Right: D
+Left: A
+
+
+
+Player Two:
+
+Up: I
+Down: K
+Left: J
+Right: L</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="button_slug_3">
+     <property name="geometry">
+      <rect>
+       <x>690</x>
+       <y>710</y>
+       <width>131</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background: none; border: 1px solid #5fd25d;</string>
+     </property>
+     <property name="text">
+      <string>Go Back</string>
      </property>
     </widget>
    </widget>

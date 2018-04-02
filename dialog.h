@@ -32,8 +32,12 @@ private slots:
     void on_button_python_clicked();
     void step();
     void endGame();
+    void endGame_p2();
+    void endGame_ssssstale();
 
-    void on_Score_board_overflow();
+    void on_button_slug_2_clicked();
+
+    void on_button_slug_3_clicked();
 
 private:
     Ui::Dialog *ui;
@@ -42,6 +46,8 @@ private:
     GamePlay *game;
     QMediaPlayer *background_music;
     QMediaPlaylist *playlist;
+
+    int cnt;
 };
 
 #endif // DIALOG_H

@@ -26,10 +26,15 @@ public:
     void add_part();
 
     int current_score();
+    int current_score_p2();
+
+    Mode get_md();
 
 
 signals:
     void collision();
+    void collision_p2();
+    void collision_ssssstale();
 
 private:
     QGraphicsScene *scene;
@@ -39,7 +44,6 @@ private:
     void DoCollision();
     Mode mode;
     QMediaPlayer *bite;
-    QLCDNumber *score_board;
 };
 
 #endif // GAMEPLAY_H

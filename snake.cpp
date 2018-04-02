@@ -133,23 +133,25 @@ void Snake::movement(){
                     else if(this->dir == Right){body[i]->set_dir(RightUp);}
                 }
             }
-            //rest of body
-            else if(body[i]->get_dir() == Left){
-                if(body[i-1]->get_dir() == Up){body[i]->set_dir(RightUp);}
-                else if(body[i-1]->get_dir() == Down){body[i]->set_dir(RightDown);}
-            }
-            else if(body[i]->get_dir() == Right){
-                if(body[i-1]->get_dir() == Up){body[i]->set_dir(LeftUp);}
-                else if(body[i-1]->get_dir() == Down){body[i]->set_dir(LeftDown);}
-            }
-            else if(body[i]->get_dir() == Up){
-                if(body[i-1]->get_dir() == Left){body[i]->set_dir(LeftDown);}
-                else if(body[i-1]->get_dir() == Right){body[i]->set_dir(RightDown);}
+            else {
+                //rest of body
+                if(body[i]->get_dir() == Left){
+                    if(body[i-1]->get_dir() == Up){body[i]->set_dir(RightUp);}
+                    else if(body[i-1]->get_dir() == Down){body[i]->set_dir(RightDown);}
+                }
+                else if(body[i]->get_dir() == Right){
+                    if(body[i-1]->get_dir() == Up){body[i]->set_dir(LeftUp);}
+                    else if(body[i-1]->get_dir() == Down){body[i]->set_dir(LeftDown);}
+                }
+                else if(body[i]->get_dir() == Up){
+                    if(body[i-1]->get_dir() == Left){body[i]->set_dir(LeftDown);}
+                    else if(body[i-1]->get_dir() == Right){body[i]->set_dir(RightDown);}
 
-            }
-            else if(body[i]->get_dir() == Down){
-                if(this->dir == Left){body[i]->set_dir(LeftUp);}
-                else if(this->dir == Right){body[i]->set_dir(RightUp);}
+                }
+                else if(body[i]->get_dir() == Down){
+                    if(body[i-1]->get_dir() == Left){body[i]->set_dir(LeftUp);}
+                    else if(body[i-1]->get_dir() == Right){body[i]->set_dir(RightUp);}
+                }
             }
         }
 
@@ -158,6 +160,7 @@ void Snake::movement(){
         currentx = prevx;
         currenty = prevy;
     }
+
 }
 
 void Snake::add_body(int cnt, QGraphicsScene *scene){

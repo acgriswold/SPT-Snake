@@ -2,6 +2,7 @@
 #include <QDebug>
 
 int score=0;
+int score_p2=0;
 
 GamePlay::GamePlay(QGraphicsScene *scene, Mode md){
     this->scene = scene;
@@ -66,6 +67,10 @@ int GamePlay::current_score(){
     return score;
 }
 
+int GamePlay::current_score_p2(){
+    return score_p2;
+}
+
 void GamePlay::renderFruit(){
     int ItemCount = 1;
     int highx=620/20;
@@ -80,7 +85,6 @@ void GamePlay::renderFruit(){
         QBrush fruitbrush;
         fruitbrush.setTexture(QPixmap(":/new_apple.png").scaledToWidth(20, Qt::SmoothTransformation));
 
-        //QGraphicsEllipseItem *apple=new QGraphicsEllipseItem(QRect(qrand()%((640+1)+650)-650,qrand()%((300+1)+290)-290,20,20));
         QGraphicsEllipseItem *apple=new QGraphicsEllipseItem(QRect(randx*20,randy*20,20,20));
 
         apple->setPen(QPen(Qt::transparent));
@@ -106,6 +110,10 @@ void GamePlay::add_part(){
     if(mode == Multi){snake_p2->add_body(1, scene);}
 }
 
+Mode GamePlay::get_md()
+{
+    return mode;
+}
 
 
 void GamePlay::DoCollision(){
@@ -140,23 +148,37 @@ void GamePlay::DoCollision(){
 
     else if(mode == Multi){
         //basic collision detection
-        if(!scene->collidingItems(snake).isEmpty()){
+        if(!scene->collidingItems(snake).isEmpty() && !scene->collidingItems(snake_p2).isEmpty()){
+            if((scene->collidingItems(snake)[0]->type() == snake_p2->type() && scene->collidingItems(snake_p2)[0]->type() == snake->type()) || (scene->collidingItems(snake)[0]->type() == 6 && scene->collidingItems(snake_p2)[0]->type() == 6)){
+                if(score > score_p2){
+                    emit collision();
+                }
+                else if(score < score_p2){
+                    emit collision_p2();
+                }
+                else{
+                    emit collision_ssssstale();
+                }
+            }
+        }
+        else if(!scene->collidingItems(snake).isEmpty()){
             qDebug() << "collision!!" << scene->collidingItems(snake)[0]->type();
 
             /*Player 1*/
             //collding border
             if(scene->collidingItems(snake)[0]->type() == 6){
                 qDebug() << "_wall!";
-                emit collision();
+                emit collision_p2();
             }
             //colliding self
             else if(scene->collidingItems(snake)[0]->type() == 65536){
                 qDebug() << "_self!";
-                emit collision();
+                emit collision_p2();
             }
             //colliding fruit
             else if(scene->collidingItems(snake)[0]->type() == 4){qDebug() << "fruit!";
                 qDebug() << "fruit!";
+                bite->play();
                 scene->removeItem(fruit);
                 renderFruit();
                 snake->add_body(1,scene);
@@ -178,10 +200,11 @@ void GamePlay::DoCollision(){
             //colliding fruit
             else if(scene->collidingItems(snake_p2)[0]->type() == 4){qDebug() << "fruit!";
                 qDebug() << "fruit!";
+                bite->play();
                 scene->removeItem(fruit);
                 renderFruit();
                 snake_p2->add_body(1,scene);
-                score++;
+                score_p2++;
             }
         }
     }
