@@ -2,5 +2,6 @@
     <qresource prefix="/sound">
         <file>gameMusic.mp3</file>
         <file>bite.mp3</file>
+        <file>explosion.mp3</file>
     </qresource>
 </RCC>
