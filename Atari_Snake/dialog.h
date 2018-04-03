@@ -9,6 +9,8 @@
 #include <QKeyEvent>
 #include <QDebug>
 #include <QMessageBox>
+#include <QMediaPlayer>
+#include <QMediaPlaylist>
 
 namespace Ui {
 class Dialog;
@@ -30,12 +32,22 @@ private slots:
     void on_button_python_clicked();
     void step();
     void endGame();
+    void endGame_p2();
+    void endGame_ssssstale();
+
+    void on_button_slug_2_clicked();
+
+    void on_button_slug_3_clicked();
 
 private:
     Ui::Dialog *ui;
     QGraphicsScene *scene;
     QTimer *timer;
     GamePlay *game;
+    QMediaPlayer *background_music;
+    QMediaPlaylist *playlist;
+
+    int cnt;
 };
 
 #endif // DIALOG_H

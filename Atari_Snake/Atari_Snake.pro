@@ -4,7 +4,8 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT       += core gui \
+				 multimedia
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -26,6 +27,7 @@ HEADERS  += dialog.h \
 FORMS    += dialog.ui
 
 RESOURCES += \
-    sprites.qrc
+    sprites.qrc \
+    sound.qrc
 
 DISTFILES +=
