@@ -134,10 +134,10 @@ font: 22pt &quot;MS Serif&quot;;</string>
     <widget class="QGraphicsView" name="graphicsView">
      <property name="geometry">
       <rect>
-       <x>10</x>
-       <y>10</y>
+       <x>0</x>
+       <y>40</y>
        <width>1491</width>
-       <height>751</height>
+       <height>761</height>
       </rect>
      </property>
      <property name="sizeAdjustPolicy">
@@ -147,7 +147,7 @@ font: 22pt &quot;MS Serif&quot;;</string>
     <widget class="QLabel" name="score_label">
      <property name="geometry">
       <rect>
-       <x>1380</x>
+       <x>0</x>
        <y>40</y>
        <width>121</width>
        <height>51</height>
@@ -166,7 +166,7 @@ font: 22pt &quot;MS Serif&quot;;</string>
       <string notr="true">background: transparent;</string>
      </property>
      <property name="text">
-      <string> Player 1</string>
+      <string>Player 1:</string>
      </property>
      <property name="textFormat">
       <enum>Qt::AutoText</enum>
@@ -178,10 +178,10 @@ font: 22pt &quot;MS Serif&quot;;</string>
     <widget class="QLCDNumber" name="Score_board">
      <property name="geometry">
       <rect>
-       <x>1300</x>
-       <y>90</y>
-       <width>171</width>
-       <height>81</height>
+       <x>100</x>
+       <y>40</y>
+       <width>101</width>
+       <height>41</height>
       </rect>
      </property>
      <property name="styleSheet">
@@ -191,10 +191,10 @@ font: 22pt &quot;MS Serif&quot;;</string>
     <widget class="QLCDNumber" name="Score_board_p2">
      <property name="geometry">
       <rect>
-       <x>-80</x>
-       <y>80</y>
-       <width>171</width>
-       <height>81</height>
+       <x>1340</x>
+       <y>40</y>
+       <width>121</width>
+       <height>41</height>
       </rect>
      </property>
      <property name="styleSheet">
@@ -205,7 +205,7 @@ color: red;</string>
     <widget class="QLabel" name="score_label_2">
      <property name="geometry">
       <rect>
-       <x>10</x>
+       <x>1240</x>
        <y>40</y>
        <width>121</width>
        <height>51</height>
@@ -225,7 +225,7 @@ color: red;</string>
 color: red;</string>
      </property>
      <property name="text">
-      <string> Player 2</string>
+      <string> Player 2:</string>
      </property>
      <property name="textFormat">
       <enum>Qt::PlainText</enum>
@@ -239,41 +239,11 @@ color: red;</string>
     </widget>
    </widget>
    <widget class="QWidget" name="controls">
-    <widget class="QLabel" name="label_2">
-     <property name="geometry">
-      <rect>
-       <x>0</x>
-       <y>30</y>
-       <width>1511</width>
-       <height>781</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Player One:
-
-Up: W
-Down: S
-Right: D
-Left: A
-
-
-
-Player Two:
-
-Up: I
-Down: K
-Left: J
-Right: L</string>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignCenter</set>
-     </property>
-    </widget>
     <widget class="QPushButton" name="button_slug_3">
      <property name="geometry">
       <rect>
        <x>690</x>
-       <y>710</y>
+       <y>740</y>
        <width>131</width>
        <height>41</height>
       </rect>
@@ -283,6 +253,71 @@ Right: L</string>
      </property>
      <property name="text">
       <string>Go Back</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_3">
+     <property name="geometry">
+      <rect>
+       <x>970</x>
+       <y>30</y>
+       <width>201</width>
+       <height>761</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">padding-top: 200px;</string>
+     </property>
+     <property name="text">
+      <string>Player Two:
+
+Up: I
+Down: K
+Left: J
+Right: L</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignHCenter|Qt::AlignTop</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_4">
+     <property name="geometry">
+      <rect>
+       <x>330</x>
+       <y>30</y>
+       <width>241</width>
+       <height>751</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">padding-top: 200px;</string>
+     </property>
+     <property name="text">
+      <string>Player One:
+
+Up: W
+Down: S
+Right: D
+Left: A</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignHCenter|Qt::AlignTop</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_2">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>520</y>
+       <width>1511</width>
+       <height>181</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Pause: P
+Exit: ESC</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
      </property>
     </widget>
    </widget>

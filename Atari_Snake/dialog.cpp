@@ -38,42 +38,44 @@ Dialog::~Dialog(){
 }
 
 void Dialog::keyPressEvent(QKeyEvent* e){
-    if(e->key() == Qt::Key_A){
-        game->proposeDir(Left, 1);
-    }
-    else if(e->key() == Qt::Key_D){
-        game->proposeDir(Right, 1);
-    }
-    else if(e->key() == Qt::Key_W){
-        game->proposeDir(Up, 1);
-    }
-    else if(e->key() == Qt::Key_S){
-        game->proposeDir(Down, 1);
-    }
-    else if(e->key() == Qt::Key_J){
-        game->proposeDir(Left, 2);
-    }
-    else if(e->key() == Qt::Key_L){
-        game->proposeDir(Right, 2);
-    }
-    else if(e->key() == Qt::Key_I){
-        game->proposeDir(Up, 2);
-    }
-    else if(e->key() == Qt::Key_K){
-        game->proposeDir(Down, 2);
-    }
-    else if(e->key() == Qt::Key_P){
-        if(cnt==0){
-            timer->stop();
-            cnt=1;
+    if(ui->stackedWidget->currentIndex()==1){
+        if(e->key() == Qt::Key_A){
+            game->proposeDir(Left, 1);
         }
-        else if(cnt==1){
-            timer->start();
-            cnt=0;
+        else if(e->key() == Qt::Key_D){
+            game->proposeDir(Right, 1);
         }
-    }
-    else if(e->key() == Qt::Key_Escape){
-        this->close();
+        else if(e->key() == Qt::Key_W){
+            game->proposeDir(Up, 1);
+        }
+        else if(e->key() == Qt::Key_S){
+            game->proposeDir(Down, 1);
+        }
+        else if(e->key() == Qt::Key_J){
+            game->proposeDir(Left, 2);
+        }
+        else if(e->key() == Qt::Key_L){
+            game->proposeDir(Right, 2);
+        }
+        else if(e->key() == Qt::Key_I){
+            game->proposeDir(Up, 2);
+        }
+        else if(e->key() == Qt::Key_K){
+            game->proposeDir(Down, 2);
+        }
+        else if(e->key() == Qt::Key_P){
+            if(cnt==0){
+                timer->stop();
+                cnt=1;
+            }
+            else if(cnt==1){
+                timer->start();
+                cnt=0;
+            }
+        }
+        else if(e->key() == Qt::Key_Escape){
+            this->close();
+        }
     }
 
     qDebug() << e->text();

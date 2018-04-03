@@ -44,7 +44,6 @@ private:
     void DoCollision();
     Mode mode;
     QMediaPlayer *bite;
-    QMediaPlayer *explosion;
 };
 
 #endif // GAMEPLAY_H

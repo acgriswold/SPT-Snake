@@ -112,7 +112,7 @@ void Snake::movement(){
         else if(prevy > currenty){body[i]->set_dir(Up);}
 
         //pivot logic
-        if((i < body_parts-1)){
+        if((i < body_parts)){
             if(i == 0){
                 //first section
                 if(body[i]->get_dir() == Left){

@@ -10,10 +10,6 @@ GamePlay::GamePlay(QGraphicsScene *scene, Mode md){
 
     bite = new QMediaPlayer();
     bite->setMedia(QUrl("qrc:/sound/bite.mp3"));
-
-    explosion = new QMediaPlayer();
-    explosion->setMedia(QUrl("qrc:/sound/explosion.mp3"));
-    explosion->setVolume(5);
 }
 
 GamePlay::~GamePlay(){
@@ -129,13 +125,11 @@ void GamePlay::DoCollision(){
             /*Player 1*/
             //collding border
             if(scene->collidingItems(snake)[0]->type() == 6){
-                explosion->play();
                 qDebug() << "_wall!";
                 emit collision();
             }
             //colliding self
             else if(scene->collidingItems(snake)[0]->type() == 65536){
-                explosion->play();
                 qDebug() << "_self!";
                 emit collision();
             }
